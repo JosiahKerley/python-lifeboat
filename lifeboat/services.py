@@ -74,6 +74,6 @@ class Director(Daemon):
       print 'Waiting for configuration'
       time.sleep(5)
   def serve(self):
-    import lifeboat.rpc.ZeroMQ_Server as Server
+    import lifeboat.rpc.Server as Server
     self.server = Server(self.configuration['bind'])
 
