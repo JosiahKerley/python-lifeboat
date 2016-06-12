@@ -49,7 +49,7 @@ class Daemon:
                   setattr(self,name,target)
                   break
             break
-    return True
+    return(True)
 
 
 class Director(Daemon):
