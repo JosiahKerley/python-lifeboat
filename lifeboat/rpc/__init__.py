@@ -20,10 +20,9 @@ class ZeroMQ_Server(Server):
     self.context = self.zmq.Context()
     self.socket = self.context.socket(self.zmq.REP)
     self.socket.bind(self.bind)
-
-while True:
-    #  Wait for next request from client
-    message = socket.recv()
-    print "Received request: ", message
-    time.sleep (1)
-    socket.send("World from %s" % port)
+  def serve(self):
+    while True:
+      message = self.socket.recv()
+      print message
+      time.sleep (1)
+      self.socket.send("World from %s" % port)
