@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from lifeboat import *
+import time
 
 class Router:
   def input(self,message):
