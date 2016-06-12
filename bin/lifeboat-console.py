@@ -5,3 +5,4 @@ import argparse
 import lifeboat
 
 clients = lifeboat.clients
+print clients
