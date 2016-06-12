@@ -80,8 +80,8 @@ class Director(Daemon):
     self.threads['Director_Server'].start()
 
   def server(self):
-    from lifeboat.rpc import Server
-    from lifeboat.data import Data
+    from lifeboat.rpc import *
+    from lifeboat.data import *
     self.data = Data()
     self.output.console('Binding '+self.configuration['bind'],depth=3)
     self.server_instance = Server(self.configuration['bind'],self.data)
