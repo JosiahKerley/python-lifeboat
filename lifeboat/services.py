@@ -75,7 +75,7 @@ class Director(Daemon):
       time.sleep(5)
   def serve(self):
     self.output.console('Starting server',depth=1)
-    self.output.console('Starting thread',depth=2)
+    self.output.console('Launching thread',depth=2)
     self.threads['Director_Server'] = utils.Threader(name='Director_Server',method=self.server)
     self.output.console('Binding '+self.configuration['bind'],depth=3)
     self.threads['Director_Server'].start()
