@@ -25,6 +25,7 @@ class RPCServer:
 
 class ZeroMQ_Server(RPCServer):
   import zmq
+  output = utils.Output()
   router = Router()
   def prepare(self):
     self.context = self.zmq.Context()
@@ -33,7 +34,7 @@ class ZeroMQ_Server(RPCServer):
   def serve(self):
     while True:
       message = self.socket.recv()
-      print message
+      self.output.console('Received message: '+str(message))
       response = self.router.input(message)
       self.socket.send(response)
 
