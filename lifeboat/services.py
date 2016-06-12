@@ -48,7 +48,7 @@ class Daemon:
                   assert target.test()
                   setattr(self,name,target)
                   break
-            #break
+            break
       return True
 
 
