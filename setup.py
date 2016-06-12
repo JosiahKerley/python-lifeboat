@@ -33,7 +33,8 @@ setup(
   author_email     = 'josiahkerley@gmail.com',
   url              = 'https://github.com/JosiahKerley/lifeboat',
   packages         = [
-    'lifeboat'
+    'lifeboat',
+    'lifeboat.modules',
   ],
   install_requires = [
     'argparse',
