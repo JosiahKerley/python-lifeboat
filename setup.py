@@ -45,6 +45,7 @@ setup(
     'jinja2',
     'requests',
     'zmq',
+    'jsonpath_rw',
   ]
 )
 
