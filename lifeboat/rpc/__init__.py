@@ -18,8 +18,6 @@ class RPCServer:
     return(self.data.query(query))
 
 
-
-
 class ZeroMQ_Server(RPCServer):
   import zmq
   def prepare(self):
