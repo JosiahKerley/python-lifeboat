@@ -2,7 +2,6 @@
 from lifeboat import *
 
 
-
 class RPCServer:
   bind = None
   data = None
