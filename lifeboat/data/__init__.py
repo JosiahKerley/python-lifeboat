@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from lifeboat import *
+#from lifeboat import *
 
 
 class InMemory_Data:
