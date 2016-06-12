@@ -35,6 +35,7 @@ setup(
   packages         = [
     'lifeboat',
     'lifeboat.rpc',
+    'lifeboat.data',
     'lifeboat.modules',
   ],
   install_requires = [
