@@ -19,7 +19,7 @@ class Output:
   def console(self,string,depth=0):
     prefix = self.prefix+' '
     if not depth == 0:
-      prefix = '^> '
+      prefix = '  '.join(range(0,depth))+'^> '
     self.write(string)
 
 
