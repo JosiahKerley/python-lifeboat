@@ -75,7 +75,11 @@ class Director(Daemon):
       time.sleep(5)
   def serve(self):
     self.output.console('Starting server',depth=1)
-    from lifeboat.rpc import Server
     self.output.console('Binding '+self.configuration['bind'],depth=2)
+    self.threads['Director_Server'] = utils.Threader(name='Director_Server',method=self.server)
+
+  def server(self):
+    from lifeboat.rpc import Server
     self.server = Server(self.configuration['bind'])
+
 
