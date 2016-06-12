@@ -10,5 +10,6 @@ results = parser.parse_args()
 print results.configfile
 
 lifeboat.services.Director.configfile = results.configfile
+print lifeboat.services.Director.configfile
 director = lifeboat.services.Director()
 director.start()
