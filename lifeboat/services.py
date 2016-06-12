@@ -76,5 +76,6 @@ class Director(Daemon):
   def serve(self):
     self.output.console('Starting server')
     from lifeboat.rpc import Server
+    self.output.console('Binding '+self.configuration['bind'],depth=1)
     self.server = Server(self.configuration['bind'])
 
