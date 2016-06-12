@@ -60,9 +60,9 @@ class ZeroMQ_Client(RPCClient):
     self.socket  = self.context.socket(self.zmq.REQ)
     self.socket.connect(self.server_address)
   def send(self,message):
-    self.socket.send("hello")
-    message = self.socket.recv()
-    print("Received reply %s [ %s ]" % (request, message))
+    self.socket.send(message)
+    reply = self.socket.recv()
+    print("Received reply %s [ %s ]" % (message, reply))
 
 ## Plumbing
 class Client(ZeroMQ_Client):
