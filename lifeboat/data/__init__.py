@@ -4,7 +4,7 @@ from lifeboat import *
 
 class Memory_Data:
   model = {}
-  
+
 
 
 class Data(Memory_Data):
