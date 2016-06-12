@@ -5,6 +5,7 @@ from lifeboat import *
 
 class RPCServer:
   bind = None
+  data = None
   def __init__(self,bind,data):
     self.bind = bind
     self.prepare()
@@ -13,6 +14,11 @@ class RPCServer:
     pass
   def serve(self):
     pass
+  def get(self,query):
+    return(self.data.query(query))
+
+
+
 
 class ZeroMQ_Server(RPCServer):
   import zmq
