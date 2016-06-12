@@ -7,6 +7,16 @@ class Router:
     return message
 
 
+class Serialization:
+  import cPickle as pickle
+  def dump(self,message):
+    payload = self.pickle.dumps(message)
+    return(payload)
+  def load(self,payload):
+    message = self.pickle.loads(payload)
+    return(message)
+
+
 ##->Server<-##
 class RPCServer:
   bind = None
