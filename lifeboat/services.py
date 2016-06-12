@@ -73,6 +73,10 @@ class Director(Daemon):
     while self.configfile == {}:
       print 'Waiting for configuration'
       time.sleep(5)
+  def serve(self):
+    import lifeboat.rpc.ZeroMQ_Server as Server
+    server = Server()
+
 
 class Endpoint(Daemon):
   name = 'Director'
