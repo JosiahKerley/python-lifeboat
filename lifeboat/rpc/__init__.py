@@ -3,11 +3,15 @@ from lifeboat import *
 
 
 
-class RPC:
-  pass
+class Server:
+  bind = None
+  def __init__(self,bind):
+    self.bind = bind
+    self.prepare()
+  def prepare(self):
+    pass
 
-
-class ZeroMQ(RPC):
+class ZeroMQ_Server(Server):
   import zmq
 
 
