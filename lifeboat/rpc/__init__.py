@@ -25,4 +25,4 @@ class ZeroMQ_Server(Server):
       message = self.socket.recv()
       print message
       time.sleep (1)
-      self.socket.send("Sending ack")
+      self.socket.send("Sending reply")
