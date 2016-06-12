@@ -8,16 +8,18 @@ class Server:
   def __init__(self,bind):
     self.bind = bind
     self.prepare()
+    self.serve()
   def prepare(self):
+    pass
+  def serve(self):
     pass
 
 class ZeroMQ_Server(Server):
   import zmq
-
-
-context = zmq.Context()
-socket = context.socket(zmq.REP)
-socket.bind("tcp://*:%s" % port)
+  def prepare(self):
+    self.context = self.zmq.Context()
+    self.socket = self.context.socket(self.zmq.REP)
+    self.socket.bind(self.bind)
 
 while True:
     #  Wait for next request from client
