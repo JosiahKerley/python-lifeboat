@@ -80,6 +80,6 @@ class Director(Daemon):
 
   def server(self):
     from lifeboat.rpc import Server
-    self.server = Server(self.configuration['bind'])
+    self.server_instance = Server(self.configuration['bind'])
 
 
