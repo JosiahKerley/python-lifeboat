@@ -9,7 +9,7 @@ class ModelData:
     self.output = utils.Output()
     self.output.console('Initializing data model',depth=3)
   def query(self,query):
-    return ( parse(query).find(self.model) )
+    return (parse(query).find(self.model))
 
 
 class InMemory_Data(ModelData):
