@@ -4,7 +4,7 @@
 class Module:
   from lifeboat import utils
   output        = utils.Output()
-  output.prefix = '\t\tModule: '
+  output.prefix = 'Module: '
   name          = None
   description   = None
   version       = None
@@ -12,7 +12,7 @@ class Module:
   author_email  = None
   base_type     = 'module'
   def test(self):
-    self.output.console('{} works!'.format(self.name))
+    self.output.console('{} works!'.format(self.name),depth=2)
     return True
 class DirectorModule(Module):
   pass
