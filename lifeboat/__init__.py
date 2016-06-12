@@ -12,7 +12,7 @@ class Module:
   author_email  = None
   base_type     = 'module'
   def test(self):
-    print '{} works!'.format(self.name)
+    self.output.console('{} works!'.format(self.name))
     return True
 class DirectorModule(Module):
   pass
