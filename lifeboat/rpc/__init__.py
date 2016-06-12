@@ -23,6 +23,7 @@ class RPCServer:
 
 class ZeroMQ_Server(RPCServer):
   import zmq
+  router = Router()
   def prepare(self):
     self.context = self.zmq.Context()
     self.socket = self.context.socket(self.zmq.REP)
@@ -31,8 +32,8 @@ class ZeroMQ_Server(RPCServer):
     while True:
       message = self.socket.recv()
       print message
-      time.sleep (1)
-      self.socket.send("Sending reply")
+      response = self.router.input(message)
+      self.socket.send(response)
 
 
 ## Plumbing
