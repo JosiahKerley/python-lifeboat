@@ -270,3 +270,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
+*.pyc
+.idea
+build/
