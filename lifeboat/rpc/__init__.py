@@ -1,6 +1,10 @@
 #!/usr/bin/python
 from lifeboat import *
 
+class Router:
+  def input(self,message):
+    return message
+
 
 class RPCServer:
   bind = None
