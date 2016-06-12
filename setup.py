@@ -27,7 +27,7 @@ def chmod_plus_x(path):
 ## Main Setup
 setup(
   name             = 'lifeboat',
-  version          = '1.0.1',
+  version          = '1.0.2',
   description      = 'Distributed Backup Service',
   author           = 'Josiah Kerley',
   author_email     = 'josiahkerley@gmail.com',
