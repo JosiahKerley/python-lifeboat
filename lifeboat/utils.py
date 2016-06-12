@@ -20,7 +20,7 @@ class Output:
     prefix = self.prefix+' '
     if not depth == 0:
       prefix = '  '*depth+'^> '
-    self.write(string)
+    self.write(prefix+string)
 
 
 
