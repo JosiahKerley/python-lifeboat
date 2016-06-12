@@ -5,7 +5,7 @@ from lifeboat import *
 class ModelData:
   def __init__(self):
     self.output = utils.Output()
-    self.output.console('Initializing data model',depth=1)
+    self.output.console('Initializing data model',depth=2)
 
 class InMemory_Data(ModelData):
   model = {}
