@@ -23,6 +23,7 @@ import modules
 import utils
 import services
 import rpc
+import data
 
 ## Base attributes
 product = 'lifeboat'
