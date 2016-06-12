@@ -4,4 +4,4 @@ import signal
 import argparse
 import lifeboat
 
-lifeboat.
+clients = lifeboat.clients
