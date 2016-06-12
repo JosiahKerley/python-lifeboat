@@ -34,6 +34,7 @@ setup(
   url              = 'https://github.com/JosiahKerley/lifeboat',
   packages         = [
     'lifeboat',
+    'lifeboat.rpc',
     'lifeboat.modules',
   ],
   install_requires = [
