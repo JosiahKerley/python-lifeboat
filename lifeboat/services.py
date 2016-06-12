@@ -77,8 +77,3 @@ class Director(Daemon):
     import lifeboat.rpc.ZeroMQ_Server as Server
     server = Server()
 
-
-class Endpoint(Daemon):
-  name = 'Director'
-  module_types = ['EndpointModule']
-  configfile = utils.File('/etc/lifeboat/endpoint.yml')
