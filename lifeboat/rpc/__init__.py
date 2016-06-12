@@ -48,6 +48,9 @@ class Operator:
 data = Data()
 data.model['foo'] = 'bar'
 op = Operator(data)
+
+
+data.model['foo'] = 'baz'
 print data.model
 print op.data.model
 
