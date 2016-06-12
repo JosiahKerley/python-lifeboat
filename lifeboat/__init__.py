@@ -24,6 +24,7 @@ import utils
 import rpc
 import data
 import services
+import clients
 
 
 ## Base attributes
