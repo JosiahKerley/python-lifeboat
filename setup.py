@@ -42,7 +42,8 @@ setup(
     'PyYAML',
     'filelock',
     'jinja2',
-    'requests'
+    'requests',
+    'zmq',
   ]
 )
 
