@@ -3,7 +3,7 @@ from lifeboat import *
 
 
 
-class Server:
+class RPCServer:
   bind = None
   def __init__(self,bind):
     self.bind = bind
@@ -14,7 +14,7 @@ class Server:
   def serve(self):
     pass
 
-class ZeroMQ_Server(Server):
+class ZeroMQ_Server(RPCServer):
   import zmq
   def prepare(self):
     self.context = self.zmq.Context()
@@ -26,3 +26,7 @@ class ZeroMQ_Server(Server):
       print message
       time.sleep (1)
       self.socket.send("Sending reply")
+
+## Plumbing
+class Server(ZeroMQ_Server):
+  pass
