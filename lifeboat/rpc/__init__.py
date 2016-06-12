@@ -46,19 +46,19 @@ class Server(ZeroMQ_Server):
 
 ##->Client<-##
 class RPCClient:
-  bind = None
-  def __init__(self,bind,data):
-    self.bind = bind
+  server_address = None
+  def __init__(self,server_address):
+    self.server_address = server_address
     self.prepare()
-    self.serve()
   def prepare(self):
     pass
 
 class ZeroMQ_Client(RPCClient):
-  context = zmq.Context()
-  print("Connecting to hello world server")
-  socket = context.socket(zmq.REQ)
-  socket.connect("tcp://localhost:5555")
+  import zmq
+  def prepare(self):
+    self.context = self.zmq.Context()
+    self.socket = context.socket(self.zmq.REQ)
+    self.socket.connect(self.server_address)
   for request in range(10):
     print("Sending request %s" % request)
     socket.send(b"Hello")
