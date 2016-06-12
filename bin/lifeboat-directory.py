@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import argparse
 import lifeboat
-print dir(lifeboat)
-print dir(lifeboat.services)
+#print dir(lifeboat)
+#print dir(lifeboat.services)
 Director = lifeboat.services.Director
 parser = argparse.ArgumentParser(description='Lifeboat Director Daemon')
 parser.add_argument('--config', '-c', action="store", dest="configfile", default=False, help='Configuration file path')
