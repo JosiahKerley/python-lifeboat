@@ -7,4 +7,8 @@ import new
 
 
 class Client:
-  pass
+  connection = None
+  address    = None
+  def __init__(self,address):
+    self.address = address
+    self.connection = lifeboat.rpc.Client(self.address)
