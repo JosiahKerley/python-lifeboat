@@ -1,3 +1,3 @@
 ## LifeBoat
 
-### This is an experminetal proof of concept for a distributed backup service
+### This is an experimental proof of concept for a distributed backup service
