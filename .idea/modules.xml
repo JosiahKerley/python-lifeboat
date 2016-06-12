@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Documents/code/python-lifeboat/.idea/python-lifeboat.iml" filepath="$USER_HOME$/Documents/code/python-lifeboat/.idea/python-lifeboat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/python-lifeboat.iml" filepath="$PROJECT_DIR$/.idea/python-lifeboat.iml" />
     </modules>
   </component>
 </project>
