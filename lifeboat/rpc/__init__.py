@@ -30,3 +30,30 @@ class ZeroMQ_Server(RPCServer):
 ## Plumbing
 class Server(ZeroMQ_Server):
   pass
+
+
+
+
+
+
+
+
+class Data:
+  model = {}
+
+class Operator:
+  def __init__(self,data):
+    self.data = data
+
+data = Data()
+data.model['foo'] = 'bar'
+op = Operator(data)
+print data.model
+print op.data.model
+
+
+
+
+
+
+
