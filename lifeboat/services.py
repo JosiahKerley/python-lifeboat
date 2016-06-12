@@ -24,10 +24,14 @@ class Daemon:
   def stop(self):
     print('Stopping {}'.format(self.name))
     for threadname in self.threads:
-      print('\tKilling {}'.format(threadname))
+      print('\tKilling thread {}'.format(threadname))
       self.threads[threadname].stop()
     utils.stopAllThreads()
   def overwrite_modules(self):
+    try:
+      self.configuration['modules']
+    except:
+      return False
     for module in self.configuration['modules']:
       for name in module:
         new_module = lifeboat.modules.get_module_by_name(module[name])
@@ -42,7 +46,8 @@ class Daemon:
                   assert target.test()
                   setattr(self,name,target)
                   break
-              break
+            break
+      return True
 
 
 class Director(Daemon):
@@ -62,3 +67,8 @@ class Director(Daemon):
     while self.configfile == {}:
       print 'Waiting for configuration'
       time.sleep(5)
+
+class Endpoint(Daemon):
+  name = 'Director'
+  module_types = ['EndpointModule']
+  configfile = utils.File('/etc/lifeboat/endpoint.yml')
