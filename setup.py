@@ -9,7 +9,8 @@ from distutils.core import setup
 here = os.path.dirname(os.path.realpath(__file__))
 bin_root = '/usr/bin'
 binaries = [
-  {'source':here+'/bin/lifeboat-directory.py','path':bin_root+'/lifeboat-director'}
+  {'source':here+'/bin/lifeboat-directory.py','path':bin_root+'/lifeboat-director'},
+  {'source':here+'/bin/lifeboat-console.py','path':bin_root+'/lifeboat-console'},
 ]
 config_root = '/etc/lifeboat'
 configs = [
