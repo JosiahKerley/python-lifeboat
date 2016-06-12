@@ -21,11 +21,11 @@ class Daemon:
   def preload(self):
     pass
   def start(self):
-    print('Starting {}'.format(self.name))
+    self.output.console('Starting {}'.format(self.name))
   def stop(self):
-    print('Stopping {}'.format(self.name))
+    self.output.console('Stopping {}'.format(self.name))
     for threadname in self.threads:
-      print('\tKilling thread {}'.format(threadname))
+      self.output.console('\tKilling thread {}'.format(threadname))
       self.threads[threadname].stop()
     utils.stopAllThreads()
   def overwrite_modules(self):
