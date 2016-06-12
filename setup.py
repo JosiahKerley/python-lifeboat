@@ -13,4 +13,3 @@ setup(
     'lifeboat.modules',
   ],
 )
-
