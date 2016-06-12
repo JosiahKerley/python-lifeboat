@@ -42,7 +42,7 @@ class Daemon:
             if len(inspect.getmro(target)) > 1:
               for module_type in self.module_types:
                 if module_type in str(inspect.getmro(target)):
-                  print '\tOverwriting module {}'.format(name)
+                  self.output.console('Overwriting module {}'.format(name),depth=1)
                   target = target()
                   assert target.test()
                   setattr(self,name,target)
