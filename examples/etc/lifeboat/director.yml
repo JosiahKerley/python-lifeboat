@@ -1,6 +1,5 @@
 meta:
   version: 1.0.0
-rpc:
-  bind: 'tcp://0.0.0.0:7111'
+bind: 'tcp://0.0.0.0:7111'
 modules:
   - foo: echo
