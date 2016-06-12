@@ -10,6 +10,7 @@ class ModelData:
   def query(self,query):
     return ( parse(query).find(self.model) )
 
+
 class InMemory_Data(ModelData):
   pass
 
