@@ -6,3 +6,4 @@ import lifeboat
 
 clients = lifeboat.clients
 print clients
+print dir(clients)
