@@ -38,25 +38,4 @@ class Server(ZeroMQ_Server):
 
 
 
-class Data:
-  model = {}
-
-class Operator:
-  def __init__(self,data):
-    self.data = data
-
-data = Data()
-data.model['foo'] = 'bar'
-op = Operator(data)
-
-
-data.model['foo'] = 'baz'
-print data.model
-print op.data.model
-
-
-
-
-
-
 
