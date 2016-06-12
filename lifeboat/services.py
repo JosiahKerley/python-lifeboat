@@ -13,6 +13,7 @@ class Daemon:
   fileObj       = None
   configfile    = None
   module_types  = []
+  output = utils.Output()
   def __init__(self,configuration={}):
     self.configuration = configuration
     self.preload()
@@ -59,6 +60,7 @@ class Director(Daemon):
       self.configuration = self.fileObj.data
       time.sleep(1)
   def preload(self):
+    self.output.prefix = '[LifeBoat-Dir]'
     if not self.configfile.exists:
       raise utils.Fatal('Director: config file {} does not exist'.format(self.configfile.filepath))
     self.fileObj = utils.LoadYAMLDynamic(self.configfile.filepath)
