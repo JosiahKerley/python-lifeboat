@@ -29,6 +29,7 @@ class Daemon:
       self.threads[threadname].stop()
     utils.stopAllThreads()
   def overwrite_modules(self):
+    self.output.console('Loading modules')
     try:
       self.configuration['modules']
     except:
