@@ -25,7 +25,7 @@ class Daemon:
   def stop(self):
     self.output.console('Stopping {}'.format(self.name))
     for threadname in self.threads:
-      self.output.console('\tKilling thread {}'.format(threadname))
+      self.output.console('Killing thread {}'.format(threadname))
       self.threads[threadname].stop()
     utils.stopAllThreads()
   def overwrite_modules(self):
