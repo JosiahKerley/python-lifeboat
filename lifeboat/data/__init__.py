@@ -2,10 +2,10 @@
 from lifeboat import *
 
 
-class Memory_Data:
+class InMemory_Data:
   model = {}
 
 
 
-class Data(Memory_Data):
+class Data(InMemory_Data):
   pass
