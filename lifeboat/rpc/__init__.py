@@ -5,7 +5,7 @@ from lifeboat import *
 
 class RPCServer:
   bind = None
-  def __init__(self,bind):
+  def __init__(self,bind,data):
     self.bind = bind
     self.prepare()
     self.serve()
