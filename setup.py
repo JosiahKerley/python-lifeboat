@@ -20,7 +20,7 @@ configs = [
 ## Functions
 def chmod_plus_x(path):
   mode = os.stat(path).st_mode
-  mode |= (mode & 0o444) >> 2    # copy R bits to X
+  mode |= (mode & 0o444) >> 2
   os.chmod(path, mode)
 
 
