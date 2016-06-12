@@ -6,6 +6,7 @@ class Router:
     return message
 
 
+##->Server<-##
 class RPCServer:
   bind = None
   data = None
@@ -43,8 +44,28 @@ class Server(ZeroMQ_Server):
 
 
 
+##->Client<-##
+class RPCClient:
+  bind = None
+  def __init__(self,bind,data):
+    self.bind = bind
+    self.prepare()
+    self.serve()
+  def prepare(self):
+    pass
 
+class ZeroMQ_Client(RPCClient):
+  context = zmq.Context()
+  print("Connecting to hello world server")
+  socket = context.socket(zmq.REQ)
+  socket.connect("tcp://localhost:5555")
+  for request in range(10):
+    print("Sending request %s" % request)
+    socket.send(b"Hello")
+    message = socket.recv()
+    print("Received reply %s [ %s ]" % (request, message))
 
-
-
+## Plumbing
+class Client(ZeroMQ_Client):
+  pass
 
