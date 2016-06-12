@@ -22,6 +22,7 @@ class DirectorModule(Module):
 import modules
 import utils
 import services
+import rpc
 
 ## Base attributes
 product = 'lifeboat'
