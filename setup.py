@@ -61,7 +61,8 @@ if 'install' in sys.argv:
   if not os.path.isdir(config_root):
     os.makedirs(config_root)
   for config in configs:
-    with open(config['source'],'r') as f:
-      source = f.read()
-    with open(config['path'],'w') as f:
-      f.write(source)
+    if not os.path.isdir(config['path']):
+      with open(config['source'],'r') as f:
+        source = f.read()
+      with open(config['path'],'w') as f:
+        f.write(source)
