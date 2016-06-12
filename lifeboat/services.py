@@ -74,7 +74,6 @@ class Director(Daemon):
       print 'Waiting for configuration'
       time.sleep(5)
   def serve(self):
-    print dir(lifeboat.rpc)
-    import lifeboat.rpc.Server as Server
+    from lifeboat.rpc import Server
     self.server = Server(self.configuration['bind'])
 
