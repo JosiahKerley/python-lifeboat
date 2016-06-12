@@ -25,6 +25,7 @@ import rpc
 import data
 import services
 
+
 ## Base attributes
 product = 'lifeboat'
 version = '1.0.0'
