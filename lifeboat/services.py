@@ -71,7 +71,7 @@ class Director(Daemon):
     self.threads['Config_File_Loader'] = utils.Threader('Director_preload',self.reload)
     self.threads['Config_File_Loader'].start()
     while self.configfile == {}:
-      print 'Waiting for configuration'
+      self.output.console('Waiting for configuration')
       time.sleep(5)
   def serve(self):
     self.output.console('Starting server',depth=1)
