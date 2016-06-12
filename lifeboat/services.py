@@ -20,8 +20,11 @@ class Daemon:
     self.overwrite_modules()
   def preload(self):
     pass
+  def serve(self):
+    pass
   def start(self):
     self.output.console('Starting {}'.format(self.name))
+    self.serve()
   def stop(self):
     self.output.console('Stopping {}'.format(self.name))
     for threadname in self.threads:
