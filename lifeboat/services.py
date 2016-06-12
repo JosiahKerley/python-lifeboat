@@ -81,7 +81,9 @@ class Director(Daemon):
 
   def server(self):
     from lifeboat.rpc import Server
+    from lifeboat.rpc import Data
+    self.data = Data()
     self.output.console('Binding '+self.configuration['bind'],depth=3)
-    self.server_instance = Server(self.configuration['bind'])
+    self.server_instance = Server(self.configuration['bind'],self.data)
 
 
