@@ -2,6 +2,7 @@
 from lifeboat import *
 from jsonpath_rw import parse
 
+
 class ModelData:
   model = {}
   def __init__(self):
