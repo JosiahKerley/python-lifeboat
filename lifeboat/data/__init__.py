@@ -11,13 +11,14 @@ class ModelData:
   def query(self,query):
     if query == '$':
       return(self.model)
-    try:
+    #try:
+    if 1:
       result = parse(query).find(self.model)
       #print result
       print '\n\n'+dir(result)+'\n\n'
       return(result)
-    except:
-      return({'error':'Query "{}" failed'.format(query)})
+    #except:
+    #  return({'error':'Query "{}" failed'.format(query)})
 
 class InMemory_Data(ModelData):
   pass
