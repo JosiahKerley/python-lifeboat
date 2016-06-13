@@ -17,7 +17,7 @@ class Router:
         if key == 'get':
           self.output.console('Got key '+key,debug=True)
           data = self.get(message['get'])
-          self.output.console('Data '+data,depth=1,debug=True)
+          self.output.console('Data '+str(data),depth=1,debug=True)
           return {'reply':data}
     return self.failure
 
