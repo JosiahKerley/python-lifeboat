@@ -3,8 +3,14 @@ from lifeboat import *
 import time
 
 class Router:
+  failure = {'error':'unknown keyspace'}
+  keys = ['get']
   def input(self,message):
-    return message
+    for key in keys:
+      if key in message.keys():
+        if key == 'get':
+          return {'reply':'got it'}
+    return self.failure
 
 
 class Serialization:
