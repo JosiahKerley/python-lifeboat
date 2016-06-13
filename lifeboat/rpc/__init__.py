@@ -34,7 +34,7 @@ class RPCServer:
   def __init__(self,bind,data):
     self.bind   = bind
     self.data   = data
-    self.router = Router(namespace=self.data)
+    self.router = Router(namespace=self.data.model)
     self.prepare()
     self.serve()
   def prepare(self):
