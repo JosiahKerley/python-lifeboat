@@ -8,6 +8,7 @@ class Router:
   def __init__(self,namespace):
     self.namespace = namespace
     self.output = utils.Output()
+    print self.namespace.model
   failure = {'error':'unknown keyspace'}
   keys = ['get']
   def input(self,message):
