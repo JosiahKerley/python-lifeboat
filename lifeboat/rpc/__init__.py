@@ -27,12 +27,14 @@ class Serialization:
 
 ##->Server<-##
 class RPCServer:
-  bind = None
-  data = None
+  bind   = None
+  data   = None
+  router = None
   serial = Serialization()
-  router = Router()
   def __init__(self,bind,data):
-    self.bind = bind
+    self.bind   = bind
+    self.data   = data
+    self.router = Router(namespace=self.data)
     self.prepare()
     self.serve()
   def prepare(self):
