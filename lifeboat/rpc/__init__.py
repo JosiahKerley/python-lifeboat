@@ -21,6 +21,7 @@ class Serialization:
 class RPCServer:
   bind = None
   data = None
+  serial = Serialization()
   def __init__(self,bind,data):
     self.bind = bind
     self.prepare()
@@ -43,10 +44,12 @@ class ZeroMQ_Server(RPCServer):
     self.socket.bind(self.bind)
   def serve(self):
     while True:
-      message = self.socket.recv()
+      payload = self.socket.recv()
+      message = self.serial.load(payload)
       self.output.console('Received message: '+str(message))
       response = self.router.input(message)
-      self.socket.send(response)
+      payload = self.serial.dump(response)
+      self.socket.send(payload)
 
 
 ## Plumbing
@@ -59,6 +62,7 @@ class Server(ZeroMQ_Server):
 ##->Client<-##
 class RPCClient:
   server_address = None
+  serial = Serialization()
   def __init__(self,server_address):
     self.server_address = server_address
     self.prepare()
