@@ -3,6 +3,8 @@ from lifeboat import *
 import time
 
 class Router:
+  def __init__(self,namespace):
+    self.namespace = namespace
   failure = {'error':'unknown keyspace'}
   keys = ['get']
   def input(self,message):
