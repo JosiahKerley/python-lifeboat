@@ -9,6 +9,8 @@ class ModelData:
     self.output = utils.Output()
     self.output.console('Initializing data model',depth=3)
   def query(self,query):
+    if query == '$':
+      return(self.model)
     try:
       return(dict(parse(query).find(self.model)))
     except:
