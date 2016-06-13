@@ -16,7 +16,7 @@ class Output:
   prefix = '[LifeBoat]'
   def write(self,string):
     print string
-  def console(self,string,depth=0):
+  def console(self,string,depth=0,debug=False):
     prefix = self.prefix+' '
     if not depth == 0:
       prefix = '  '*depth+'^> '
