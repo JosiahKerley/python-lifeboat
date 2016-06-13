@@ -12,7 +12,9 @@ class ModelData:
     if query == '$':
       return(self.model)
     try:
-      return(parse(query).find(self.model))
+      result = parse(query).find(self.model)
+      print result
+      print dir(result)
       return(dict(parse(query).find(self.model)))
     except:
       return({'error':'Query "{}" failed'.format(query)})
