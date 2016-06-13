@@ -30,6 +30,7 @@ class RPCServer:
   bind = None
   data = None
   serial = Serialization()
+  router = Router()
   def __init__(self,bind,data):
     self.bind = bind
     self.prepare()
@@ -45,7 +46,6 @@ class RPCServer:
 class ZeroMQ_Server(RPCServer):
   import zmq
   output = utils.Output()
-  router = Router()
   def prepare(self):
     self.context = self.zmq.Context()
     self.socket = self.context.socket(self.zmq.REP)
