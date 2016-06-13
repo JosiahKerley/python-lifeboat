@@ -3,6 +3,8 @@ from lifeboat import *
 import time
 
 class Router:
+  namespace = None
+  output    = None
   def __init__(self,namespace):
     self.namespace = namespace
     self.output = utils.Output()
