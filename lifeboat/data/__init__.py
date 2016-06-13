@@ -9,16 +9,16 @@ class ModelData:
     self.output = utils.Output()
     self.output.console('Initializing data model',depth=3)
   def query(self,query):
+    results = []
     if query == '$':
       return(self.model)
-    #try:
-    if 1:
-      result = parse(query).find(self.model)
-      #print result
-      print '\n\n'+str(result[0].value)+'\n\n'
-      return(result)
-    #except:
-    #  return({'error':'Query "{}" failed'.format(query)})
+    try:
+      found = parse(query).find(self.model)
+      for result in found:
+        results.append(result.value)
+      return(results)
+    except:
+      return({'error':'Query "{}" failed'.format(query)})
 
 class InMemory_Data(ModelData):
   pass
