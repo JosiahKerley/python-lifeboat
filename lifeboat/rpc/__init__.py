@@ -11,8 +11,12 @@ class Router:
     for key in self.keys:
       if key in message.keys():
         if key == 'get':
-          return {'reply':'got it'}
+          data = self.get(message['get'])
+          return {'reply':data}
     return self.failure
+
+  def get(self,query):
+    return(self.namespace.query(query))
 
 
 class Serialization:
@@ -41,8 +45,6 @@ class RPCServer:
     pass
   def serve(self):
     pass
-  def get(self,query):
-    return(self.data.query(query))
 
 
 class ZeroMQ_Server(RPCServer):
