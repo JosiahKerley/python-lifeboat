@@ -13,8 +13,8 @@ class ModelData:
       return(self.model)
     try:
       result = parse(query).find(self.model)
-      print result
-      print dir(result)
+      #print result
+      print '\n\n'+dir(result)+'\n\n'
       return(dict(parse(query).find(self.model)))
     except:
       return({'error':'Query "{}" failed'.format(query)})
