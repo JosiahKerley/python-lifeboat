@@ -15,7 +15,7 @@ class ModelData:
     if 1:
       result = parse(query).find(self.model)
       #print result
-      print '\n\n'+str(dir(result[0].value))+'\n\n'
+      print '\n\n'+str(result[0].value)+'\n\n'
       return(result)
     #except:
     #  return({'error':'Query "{}" failed'.format(query)})
