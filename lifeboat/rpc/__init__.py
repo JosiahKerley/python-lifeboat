@@ -6,7 +6,7 @@ class Router:
   failure = {'error':'unknown keyspace'}
   keys = ['get']
   def input(self,message):
-    for key in keys:
+    for key in self.keys:
       if key in message.keys():
         if key == 'get':
           return {'reply':'got it'}
