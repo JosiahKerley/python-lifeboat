@@ -5,13 +5,16 @@ import time
 class Router:
   def __init__(self,namespace):
     self.namespace = namespace
+    self.output = utils.Output()
   failure = {'error':'unknown keyspace'}
   keys = ['get']
   def input(self,message):
     for key in self.keys:
       if key in message.keys():
         if key == 'get':
+          self.output.console('Got key '+key,debug=True)
           data = self.get(message['get'])
+          self.output.console('Data '+data,depth=1,debug=True)
           return {'reply':data}
     return self.failure
 
